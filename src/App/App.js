@@ -13,17 +13,19 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const livingStudents = studentData.livingStudents();
-    this.setState({ livingStudents });
-    const dearlyBeloved = studentData.dearlyBeloved();
-    this.setState({ dearlyBeloved });
+    const tempLivingStudents = studentData.livingStudents();
+    console.error(tempLivingStudents);
+    this.setState({ livingStudents: tempLivingStudents });
+    const tempDearlyBeloved = studentData.dearlyBeloved();
+    console.error(tempDearlyBeloved);
+    this.setState({ dearlyBeloved: tempDearlyBeloved });
   }
 
   render() {
     return (
       <div className="App">
         <h2>INSIDE APP COMPONENT</h2>
-        <SharkTank />
+        <SharkTank students={this.state.livingStudents}/>
       </div>
     );
   }

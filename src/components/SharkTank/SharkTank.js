@@ -7,7 +7,7 @@ import LiveStudent from '../LiveStudent/LiveStudent';
 
 class SharkTank extends React.Component {
   static propTypes = {
-    students: PropTypes.arrayOf(studentShape.studentShape),
+    liveStudent: PropTypes.arrayOf(studentShape.studentShape),
   }
 
   render() {
@@ -17,8 +17,13 @@ class SharkTank extends React.Component {
       <LiveStudent key={student.id} student={student}/>
     ));
 
-    return(
-
+    return (
+      <div>
+       <h2>Shark Tank</h2>
+       <div className="card-columns">
+       { studentCards }
+       </div>
+      </div>
     );
   }
 }

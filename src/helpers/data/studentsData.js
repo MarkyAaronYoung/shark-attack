@@ -66,61 +66,61 @@ const students = [
     isDead: false,
   },
   {
-    id: 'student11',
+    id: 'student12',
     firstName: 'Matt',
     lastName: 'Logan',
     isDead: false,
   },
   {
-    id: 'student12',
+    id: 'student13',
     firstName: 'Michael',
     lastName: 'Dotson',
     isDead: false,
   },
   {
-    id: 'student13',
+    id: 'student14',
     firstName: 'Nate',
     lastName: 'Owens',
     isDead: false,
   },
   {
-    id: 'student14',
+    id: 'student15',
     firstName: 'Nick',
     lastName: 'Walters',
     isDead: false,
   },
   {
-    id: 'student15',
+    id: 'student16',
     firstName: 'Nikhil',
     lastName: 'Gaikward',
     isDead: false,
   },
   {
-    id: 'student16',
+    id: 'student17',
     firstName: 'Ola',
     lastName: 'Oladinni',
     isDead: false,
   },
   {
-    id: 'student17',
+    id: 'student18',
     firstName: 'Pete',
     lastName: 'Stewart',
     isDead: false,
   },
   {
-    id: 'student18',
+    id: 'student19',
     firstName: 'Phonesalo',
     lastName: 'Sihanorak',
     isDead: false,
   },
   {
-    id: 'student19',
+    id: 'student20',
     firstName: 'Ryan',
     lastName: 'Beiden',
     isDead: false,
   },
   {
-    id: 'student20',
+    id: 'student21',
     firstName: 'William',
     lastName: 'Campbell',
     isDead: false,
@@ -129,14 +129,14 @@ const students = [
 
 const livingStudents = () => students.map((student) => {
   if (student.isDead === false) {
-    return students;
+    return student;
   }
   return false;
 });
 
 const dearlyBeloved = () => students.map((student) => {
   if (student.isDead === true) {
-    return students;
+    return student;
   }
   return false;
 });
