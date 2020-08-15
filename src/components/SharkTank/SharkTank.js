@@ -20,6 +20,7 @@ class SharkTank extends React.Component {
     return (
       <div>
        <h2>Shark Tank</h2>
+       <button className="btn btn-danger"><i class="fas fa-skull-crossbones">ShArK aTtAcK</i></button>
        <div className="card-columns">
        { studentCards }
        </div>
