@@ -144,13 +144,18 @@ const dearlyBeloved = () => students.map((student) => {
 // This file should export a function called followTheLight that takes in an id,
 //  finds that student, and changes student.isDead to true
 
-const followTheLight = (studentId) => {
-  students.forEach((response) => {
-    if (response.id === studentId) {
-      response.isDead = true;
-    }
-  });
+const followTheLight = () => {
+  const livingStudentsId = livingStudents().map((student) => student.id);
+  const randomStudent = Math.floor(Math.random() * (livingStudentsId.length));
+  students.find((student) => student.id === livingStudentsId[randomStudent]).isDead = true;
 };
+// const followTheLight = (studentId) => {
+//   students.forEach((response) => {
+//     if (response.id === studentId) {
+//       response.isDead = true;
+//     }
+//   });
+// };
 
 const getStudents = () => students;
 

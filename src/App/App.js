@@ -4,6 +4,8 @@ import studentData from '../helpers/data/studentsData';
 
 import SharkTank from '../components/SharkTank/SharkTank';
 
+import Graveyard from '../components/Graveyard/Graveyard';
+
 import './App.scss';
 
 class App extends React.Component {
@@ -14,18 +16,24 @@ class App extends React.Component {
 
   componentDidMount() {
     const tempLivingStudents = studentData.livingStudents();
-    console.error(tempLivingStudents);
     this.setState({ livingStudents: tempLivingStudents });
     const tempDearlyBeloved = studentData.dearlyBeloved();
-    console.error(tempDearlyBeloved);
+    this.setState({ dearlyBeloved: tempDearlyBeloved });
+  }
+
+  eatStudent = () => {
+    studentData.followTheLight();
+    const tempLivingStudents = studentData.livingStudents();
+    this.setState({ livingStudents: tempLivingStudents });
+    const tempDearlyBeloved = studentData.dearlyBeloved();
     this.setState({ dearlyBeloved: tempDearlyBeloved });
   }
 
   render() {
     return (
       <div className="App">
-        <h2>INSIDE APP COMPONENT</h2>
-        <SharkTank students={this.state.livingStudents}/>
+        <SharkTank students={this.state.livingStudents} eatStudent={this.eatStudent}/>
+        <Graveyard students={this.state.dearlyBeloved}/>
       </div>
     );
   }
