@@ -4,6 +4,8 @@ import React from 'react';
 
 import studentShape from '../../helpers/propz/studentShape';
 
+import './GraveStone.scss';
+
 class GraveStone extends React.Component {
   static propTypes = {
     student: studentShape.studentShape,
@@ -13,9 +15,12 @@ class GraveStone extends React.Component {
     const { student } = this.props;
 
     return (
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title text-uppercase">{student.firstName} {student.lastName}</h5>
+      <div className="card bg-dark text-light border-0">
+        <img className="card-img-top" src="https://media.wired.com/photos/5926a817cefba457b079aba4/master/w_1164,c_limit/GravestoneTA-186755520.jpg" alt="one specific tombstone" />
+        <div className="card-img-overlay">
+          <div className="box d-flex flex-column justify-content-center">
+            <p className="text-uppercase">{student.firstName} {student.lastName}</p>
+          </div>
         </div>
       </div>
     );
