@@ -127,19 +127,9 @@ const students = [
   },
 ];
 
-const livingStudents = () => students.map((student) => {
-  if (student.isDead === false) {
-    return student;
-  }
-  return false;
-});
+const livingStudents = () => students.filter((student) => student.isDead === false);
 
-const dearlyBeloved = () => students.map((student) => {
-  if (student.isDead === true) {
-    return student;
-  }
-  return false;
-});
+const dearlyBeloved = () => students.filter((student) => student.isDead);
 
 // This file should export a function called followTheLight that takes in an id,
 //  finds that student, and changes student.isDead to true
