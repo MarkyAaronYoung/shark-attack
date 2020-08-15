@@ -7,7 +7,7 @@ import GraveStone from '../GraveStone/GraveStone';
 
 import './Graveyard.scss';
 
-class SharkTank extends React.Component {
+class Graveyard extends React.Component {
   static propTypes = {
     graveStone: PropTypes.arrayOf(studentShape.studentShape),
   }
@@ -30,4 +30,4 @@ class SharkTank extends React.Component {
   }
 }
 
-export default SharkTank;
+export default Graveyard;

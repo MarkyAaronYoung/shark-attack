@@ -7,8 +7,15 @@ import LiveStudent from '../LiveStudent/LiveStudent';
 
 class SharkTank extends React.Component {
   static propTypes = {
-    liveStudent: PropTypes.arrayOf(studentShape.studentShape),
+    students: PropTypes.arrayOf(studentShape.studentShape),
+    eatStudent: PropTypes.func,
   }
+
+  followTheLightEvent = (e) => {
+    e.preventDefault();
+    const { eatStudent } = this.props;
+    eatStudent();
+  };
 
   render() {
     const { students } = this.props;
@@ -20,7 +27,7 @@ class SharkTank extends React.Component {
     return (
       <div>
        <h2>Shark Tank</h2>
-       <button className="btn btn-danger"><i class="fas fa-skull-crossbones">ShArK aTtAcK</i></button>
+       <button className="btn btn-danger" onClick={this.followTheLightEvent}><i className="fas fa-skull-crossbones">ShArK aTtAcK</i></button>
        <div className="card-columns">
        { studentCards }
        </div>
